@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5F479FF81E35E1CA00DCBDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FF71E35E1CA00DCBDD7 /* main.m */; };
+		5F479FFB1E35E1CA00DCBDD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */; };
+		5F479FFE1E35E1CA00DCBDD7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFD1E35E1CA00DCBDD7 /* ViewController.m */; };
+		5F47A0011E35E1CA00DCBDD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F479FFF1E35E1CA00DCBDD7 /* Main.storyboard */; };
+		5F47A0031E35E1CA00DCBDD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F47A0021E35E1CA00DCBDD7 /* Assets.xcassets */; };
+		5F47A0061E35E1CA00DCBDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F47A0041E35E1CA00DCBDD7 /* LaunchScreen.storyboard */; };
+		5F47A0141E35E3D600DCBDD7 /* Spot_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F47A0131E35E3C600DCBDD7 /* Spot_IM.framework */; };
+		5F47A0151E35E3D600DCBDD7 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F47A0131E35E3C600DCBDD7 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5F47A0121E35E3C600DCBDD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F47A00E1E35E3C600DCBDD7 /* Spot_IM.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5F39DA1D1E14560700FAC31B;
+			remoteInfo = Spot_IM;
+		};
+		5F47A0161E35E3D600DCBDD7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5F47A00E1E35E3C600DCBDD7 /* Spot_IM.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5F39DA1C1E14560700FAC31B;
+			remoteInfo = Spot_IM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5F47A0181E35E3D600DCBDD7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5F47A0151E35E3D600DCBDD7 /* Spot_IM.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5F479FF31E35E1CA00DCBDD7 /* SpotQAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotQAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F479FF71E35E1CA00DCBDD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5F479FF91E35E1CA00DCBDD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		5F479FFC1E35E1CA00DCBDD7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		5F479FFD1E35E1CA00DCBDD7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		5F47A0001E35E1CA00DCBDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5F47A0021E35E1CA00DCBDD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F47A0051E35E1CA00DCBDD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F47A0071E35E1CA00DCBDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F47A00E1E35E3C600DCBDD7 /* Spot_IM.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Spot_IM.xcodeproj; path = ../SpotSDK/Spot_IM.xcodeproj; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F479FF01E35E1CA00DCBDD7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F47A0141E35E3D600DCBDD7 /* Spot_IM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5F479FEA1E35E1CA00DCBDD7 = {
+			isa = PBXGroup;
+			children = (
+				5F47A00E1E35E3C600DCBDD7 /* Spot_IM.xcodeproj */,
+				5F479FF51E35E1CA00DCBDD7 /* SpotQAApp */,
+				5F479FF41E35E1CA00DCBDD7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F479FF41E35E1CA00DCBDD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F479FF31E35E1CA00DCBDD7 /* SpotQAApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F479FF51E35E1CA00DCBDD7 /* SpotQAApp */ = {
+			isa = PBXGroup;
+			children = (
+				5F479FF91E35E1CA00DCBDD7 /* AppDelegate.h */,
+				5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */,
+				5F479FFC1E35E1CA00DCBDD7 /* ViewController.h */,
+				5F479FFD1E35E1CA00DCBDD7 /* ViewController.m */,
+				5F479FFF1E35E1CA00DCBDD7 /* Main.storyboard */,
+				5F47A0021E35E1CA00DCBDD7 /* Assets.xcassets */,
+				5F47A0041E35E1CA00DCBDD7 /* LaunchScreen.storyboard */,
+				5F47A0071E35E1CA00DCBDD7 /* Info.plist */,
+				5F479FF61E35E1CA00DCBDD7 /* Supporting Files */,
+			);
+			path = SpotQAApp;
+			sourceTree = "<group>";
+		};
+		5F479FF61E35E1CA00DCBDD7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5F479FF71E35E1CA00DCBDD7 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5F47A00F1E35E3C600DCBDD7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F47A0131E35E3C600DCBDD7 /* Spot_IM.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F479FF21E35E1CA00DCBDD7 /* SpotQAApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F47A00A1E35E1CA00DCBDD7 /* Build configuration list for PBXNativeTarget "SpotQAApp" */;
+			buildPhases = (
+				5F479FEF1E35E1CA00DCBDD7 /* Sources */,
+				5F479FF01E35E1CA00DCBDD7 /* Frameworks */,
+				5F479FF11E35E1CA00DCBDD7 /* Resources */,
+				5F47A0181E35E3D600DCBDD7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5F47A0171E35E3D600DCBDD7 /* PBXTargetDependency */,
+			);
+			name = SpotQAApp;
+			productName = SpotQAApp;
+			productReference = 5F479FF31E35E1CA00DCBDD7 /* SpotQAApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F479FEB1E35E1CA00DCBDD7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = spot;
+				TargetAttributes = {
+					5F479FF21E35E1CA00DCBDD7 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = VNQ8G44ZN2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 5F479FEE1E35E1CA00DCBDD7 /* Build configuration list for PBXProject "SpotQAApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F479FEA1E35E1CA00DCBDD7;
+			productRefGroup = 5F479FF41E35E1CA00DCBDD7 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5F47A00F1E35E3C600DCBDD7 /* Products */;
+					ProjectRef = 5F47A00E1E35E3C600DCBDD7 /* Spot_IM.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				5F479FF21E35E1CA00DCBDD7 /* SpotQAApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5F47A0131E35E3C600DCBDD7 /* Spot_IM.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Spot_IM.framework;
+			remoteRef = 5F47A0121E35E3C600DCBDD7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F479FF11E35E1CA00DCBDD7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F47A0061E35E1CA00DCBDD7 /* LaunchScreen.storyboard in Resources */,
+				5F47A0031E35E1CA00DCBDD7 /* Assets.xcassets in Resources */,
+				5F47A0011E35E1CA00DCBDD7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F479FEF1E35E1CA00DCBDD7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F479FFE1E35E1CA00DCBDD7 /* ViewController.m in Sources */,
+				5F479FFB1E35E1CA00DCBDD7 /* AppDelegate.m in Sources */,
+				5F479FF81E35E1CA00DCBDD7 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5F47A0171E35E3D600DCBDD7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Spot_IM;
+			targetProxy = 5F47A0161E35E3D600DCBDD7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5F479FFF1E35E1CA00DCBDD7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F47A0001E35E1CA00DCBDD7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5F47A0041E35E1CA00DCBDD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5F47A0051E35E1CA00DCBDD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F47A0081E35E1CA00DCBDD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		5F47A0091E35E1CA00DCBDD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5F47A00B1E35E1CA00DCBDD7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VNQ8G44ZN2;
+				INFOPLIST_FILE = SpotQAApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotIM.SpotQAApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		5F47A00C1E35E1CA00DCBDD7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = VNQ8G44ZN2;
+				INFOPLIST_FILE = SpotQAApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.spotIM.SpotQAApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F479FEE1E35E1CA00DCBDD7 /* Build configuration list for PBXProject "SpotQAApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F47A0081E35E1CA00DCBDD7 /* Debug */,
+				5F47A0091E35E1CA00DCBDD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5F47A00A1E35E1CA00DCBDD7 /* Build configuration list for PBXNativeTarget "SpotQAApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F47A00B1E35E1CA00DCBDD7 /* Debug */,
+				5F47A00C1E35E1CA00DCBDD7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F479FEB1E35E1CA00DCBDD7 /* Project object */;
+}
