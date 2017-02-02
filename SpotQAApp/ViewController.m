@@ -7,12 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "IntroTableViewController.h"
 #import <Spot_IM/Spot_IM.h>
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *spotIdTextField;
-@property (weak, nonatomic) IBOutlet UISwitch *isRTL;
-@property (strong, nonatomic) SpotIMController *spotController;
 @end
 
 @implementation ViewController
@@ -23,11 +22,7 @@
 }
 
 - (IBAction)load:(UIButton *)sender {
-    _spotController = [SpotIMController new];
-    _spotController.view.frame = (CGRect){0, 100,self.view.frame.size.width, 496};
-    _spotController.spotId = _spotIdTextField.text;
-    _spotController.configuration.title = @"QA app";
-    [self.view addSubview:_spotController.view];
+    [SpotConversation shared].spotId = _spotIdTextField.text;
     [_spotIdTextField resignFirstResponder];
 }
 
@@ -36,5 +31,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ((IntroTableViewController *)segue.destinationViewController).spotId = _spotIdTextField.text;
+}
 @end
