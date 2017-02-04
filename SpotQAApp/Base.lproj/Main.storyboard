@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Please Enter Spot.IM id for conversational" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOi-6J-fds">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="sp_t9tFUo1E" borderStyle="roundedRect" placeholder="Please Enter Spot.IM id for conversational" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xOi-6J-fds">
                                 <rect key="frame" x="16" y="174" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -122,7 +122,7 @@
         <!--Module View Controller-->
         <scene sceneID="2dY-Xt-7UE">
             <objects>
-                <viewController id="cdV-6s-wPl" customClass="ModuleViewController" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="cdV-6s-wPl" customClass="ModuleViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="css-ll-eSb"/>
                         <viewControllerLayoutGuide type="bottom" id="nJf-AC-aRD"/>
