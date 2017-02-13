@@ -12,6 +12,15 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *spotIdTextField;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segment;
+@end
+
+@interface SpotConversation ()
+@property (nonatomic) BOOL isStaging;
+@end
+
+@interface SpotIM()
+@property (nonatomic) BOOL staging;
 @end
 
 @implementation ViewController
@@ -22,6 +31,8 @@
 }
 
 - (IBAction)load:(UIButton *)sender {
+    [SpotConversation shared].isStaging = _segment.selectedSegmentIndex == 0;
+    [SpotIM shared].staging = _segment.selectedSegmentIndex == 0;
     [SpotConversation shared].spotId = _spotIdTextField.text;
     [_spotIdTextField resignFirstResponder];
 }

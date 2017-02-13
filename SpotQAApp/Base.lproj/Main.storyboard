@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HWO-oR-sZ6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HWO-oR-sZ6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,6 +39,14 @@
                                     <segue destination="nIJ-TW-heQ" kind="show" identifier="LoadRecirculation" id="YwV-8k-38x"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-1M-je5">
+                                <rect key="frame" x="111" y="393" width="152" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Staging"/>
+                                    <segment title="Production"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -51,6 +59,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="L3d-zt-aKS"/>
                     <connections>
+                        <outlet property="segment" destination="h2i-1M-je5" id="rRh-dt-Fak"/>
                         <outlet property="spotIdTextField" destination="xOi-6J-fds" id="dMf-yp-tSE"/>
                     </connections>
                 </viewController>
@@ -113,6 +122,7 @@
                     </tableView>
                     <connections>
                         <segue destination="cdV-6s-wPl" kind="show" identifier="LoadItem" id="2Ta-yh-55o"/>
+                        <segue destination="QGe-ey-8tR" kind="show" identifier="Recirculation" id="daE-k8-ln7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWc-6H-KQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -136,6 +146,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBb-ft-HFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2708" y="122.78860569715144"/>
+        </scene>
+        <!--Recirculation Table View Controller-->
+        <scene sceneID="gQf-uR-HPX">
+            <objects>
+                <tableViewController id="QGe-ey-8tR" customClass="RecirculationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="R9C-qA-Pg8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="TeF-LY-qQ4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="mGz-wC-wBX">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mGz-wC-wBX" id="ldB-4b-Nl3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="452" id="fnF-HY-68g">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="452"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fnF-HY-68g" id="uNW-Dj-9fT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="451"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d48-Tv-Fv7">
+                                        <rect key="frame" x="0.0" y="496" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d48-Tv-Fv7" id="L5I-Gs-9Fd">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="QGe-ey-8tR" id="zqO-lY-p1Y"/>
+                            <outlet property="delegate" destination="QGe-ey-8tR" id="pk8-Aa-LWV"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pm-jq-phs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2708" y="861.3193403298352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7GG-d2-QTH">

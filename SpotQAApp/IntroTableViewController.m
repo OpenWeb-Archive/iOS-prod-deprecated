@@ -8,6 +8,7 @@
 
 #import "IntroTableViewController.h"
 #import "ModuleViewController.h"
+#import "RecirculationTableViewController.h"
 
 @interface IntroTableViewController ()
 
@@ -43,7 +44,7 @@
         }]];
         [self presentViewController:alert animated:YES completion:nil];
     } else {
-        [self performSegueWithIdentifier:@"LoadItem" sender:nil];
+        [self performSegueWithIdentifier:@"Recirculation" sender:nil];
     }
 }
 

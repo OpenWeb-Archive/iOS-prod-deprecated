@@ -17,6 +17,7 @@
 		5F47A0151E35E3D600DCBDD7 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F47A0131E35E3C600DCBDD7 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FB183741E427E2600C3872C /* IntroTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB183731E427E2600C3872C /* IntroTableViewController.m */; };
 		5FB183771E427EE500C3872C /* ModuleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FB183761E427EE500C3872C /* ModuleViewController.m */; };
+		5FF99F421E50F17A006998E7 /* RecirculationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF99F411E50F17A006998E7 /* RecirculationTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,8 @@
 		5FB183731E427E2600C3872C /* IntroTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntroTableViewController.m; sourceTree = "<group>"; };
 		5FB183751E427EE500C3872C /* ModuleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModuleViewController.h; sourceTree = "<group>"; };
 		5FB183761E427EE500C3872C /* ModuleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModuleViewController.m; sourceTree = "<group>"; };
+		5FF99F401E50F17A006998E7 /* RecirculationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecirculationTableViewController.h; sourceTree = "<group>"; };
+		5FF99F411E50F17A006998E7 /* RecirculationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecirculationTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				5FB183731E427E2600C3872C /* IntroTableViewController.m */,
 				5FB183751E427EE500C3872C /* ModuleViewController.h */,
 				5FB183761E427EE500C3872C /* ModuleViewController.m */,
+				5FF99F401E50F17A006998E7 /* RecirculationTableViewController.h */,
+				5FF99F411E50F17A006998E7 /* RecirculationTableViewController.m */,
 			);
 			path = SpotQAApp;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FF99F421E50F17A006998E7 /* RecirculationTableViewController.m in Sources */,
 				5FB183741E427E2600C3872C /* IntroTableViewController.m in Sources */,
 				5FB183771E427EE500C3872C /* ModuleViewController.m in Sources */,
 				5F479FFE1E35E1CA00DCBDD7 /* ViewController.m in Sources */,
