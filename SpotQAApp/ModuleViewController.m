@@ -24,7 +24,6 @@
     [self.view addSubview:[SpotConversation shared]];
     [SpotConversation shared].postId = _postId;
     [SpotConversation shared].presentingController = self;
-    [self.view addSubview:[SpotConversation shared]];
 }
 
 

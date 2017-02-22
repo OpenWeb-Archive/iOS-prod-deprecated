@@ -9,8 +9,9 @@
 #import "RecirculationTableViewController.h"
 #import <Spot_IM/Spot_IM.h>
 
-@interface RecirculationTableViewController ()
+@interface RecirculationTableViewController () <SpotIMControllerDelegate, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) SpotIMController *spotController;
+@property (nonatomic) NSInteger rows;
 @end
 
 @implementation RecirculationTableViewController
@@ -24,6 +25,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.title = @"Recirculation";
+    _rows = 3;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -34,10 +36,7 @@
         _spotController.spotId = _spotId;
         _spotController.configuration.title = @"QA";
         _spotController.configuration.maxCacheSize = 200;
-        [self.view addSubview:_spotController.view];
-        
-        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
-        [cell.contentView addSubview:_spotController.view];
+        _spotController.delegate = self;
     }
 }
 
@@ -54,4 +53,43 @@
     }];
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _rows;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *identifier = indexPath.row == 1 && _rows == 4 ? @"Cell" : @"TextCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    if (indexPath.row == 1 && _rows == 4) {
+        [cell.contentView addSubview:_spotController.view];
+    }
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (_rows == 4 && indexPath.row == 1) {
+        return 452.0;
+    }
+    return 100;
+}
+
+#pragma mark SpotIMControllerDelegate
+
+- (void)didLoadSpotIMController:(SpotIMController *)controller {
+    _rows = 4;
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:1 inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
+    
+}
+
+- (void)didFailLoadSpotIMController:(SpotIMController *)controller withError:(NSError *)error {
+    
+}
+
+- (void)didSelectArticle:(NSURL *)url messageId:(NSString *)messageId {
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+}
+
+- (void)didSelectComment:(NSURL *)url messageId:(NSString *)messageId {
+    [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:nil];
+}
 @end
