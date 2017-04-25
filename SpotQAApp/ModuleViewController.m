@@ -20,17 +20,20 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Conversation";
+    self.navigationItem.hidesBackButton = YES;
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem = newBackButton;
     [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
     [self.view addSubview:[SpotConversation shared]];
     [SpotConversation shared].postId = _postId;
     [SpotConversation shared].presentingController = self;
 }
 
-
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)back:(UIBarButtonItem *)sender {
     [[SpotConversation shared] dissmiss];
-    [super viewDidDisappear:animated];
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 //    if (_postId && [SpotConversation shared].shouldReload) {
