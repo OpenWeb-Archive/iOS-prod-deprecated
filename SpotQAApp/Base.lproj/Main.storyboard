@@ -39,9 +39,11 @@
                                     <segue destination="nIJ-TW-heQ" kind="show" identifier="LoadRecirculation" id="YwV-8k-38x"/>
                                 </connections>
                             </button>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-1M-je5">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="h2i-1M-je5">
                                 <rect key="frame" x="111" y="393" width="152" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="wmv-JK-RHH"/>
+                                </constraints>
                                 <segments>
                                     <segment title="Staging"/>
                                     <segment title="Production"/>
@@ -53,6 +55,8 @@
                             <constraint firstItem="xOi-6J-fds" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="110" id="0kj-0x-eLZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xOi-6J-fds" secondAttribute="trailing" id="0zF-ty-F74"/>
                             <constraint firstItem="LhK-pb-4CZ" firstAttribute="top" secondItem="xOi-6J-fds" secondAttribute="bottom" constant="144" id="fIf-An-Uys"/>
+                            <constraint firstItem="h2i-1M-je5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mPT-PN-AN4"/>
+                            <constraint firstItem="h2i-1M-je5" firstAttribute="top" secondItem="LhK-pb-4CZ" secondAttribute="bottom" constant="15" id="pO9-If-22h"/>
                             <constraint firstAttribute="leadingMargin" secondItem="xOi-6J-fds" secondAttribute="leading" id="uzf-Yf-YpA"/>
                             <constraint firstItem="LhK-pb-4CZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ykM-Hj-y7y"/>
                         </constraints>
