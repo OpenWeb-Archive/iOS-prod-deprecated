@@ -20,17 +20,49 @@
     // Do any additional setup after loading the view.
     
     self.title = @"Conversation";
+    self.navigationItem.hidesBackButton = YES;
+    UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
+    self.navigationItem.leftBarButtonItem = newBackButton;
+    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:![SpotConversation shared].isLoggedIn ? @"Login" : @"Logout"
+                                                                     style:UIBarButtonItemStylePlain
+                                                                    target:self
+                                                                    action:@selector(logout:)];
+    self.navigationItem.rightBarButtonItem = logoutButton;
     [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
     [self.view addSubview:[SpotConversation shared]];
     [SpotConversation shared].postId = _postId;
     [SpotConversation shared].presentingController = self;
 }
 
-
-- (void)viewDidDisappear:(BOOL)animated {
+- (void)back:(UIBarButtonItem *)sender {
     [[SpotConversation shared] dissmiss];
-    [super viewDidDisappear:animated];
+    [self.navigationController popViewControllerAnimated:YES];
 }
+
+- (void)logout:(UIBarButtonItem *)sender {
+    if ([sender.title isEqualToString:@"Logout"]) {
+        [[SpotConversation shared] logoutSSO];
+        sender.title = @"Login";
+    } else {
+        sender.enabled = NO;
+        sender.title = @"Logging In ...";
+        [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
+            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:1081/getCodeB?codeA=" stringByAppendingString:codeA]]
+                                                      encoding:NSUTF8StringEncoding
+                                                         error:nil];
+            NSLog(@"Conversation %@", test);
+            [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
+                if (!error) {
+                    sender.enabled = YES;
+                    sender.title = @"Logout";
+                    NSLog(@"success");
+                }
+            }];
+        }];
+    }
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 //    if (_postId && [SpotConversation shared].shouldReload) {
