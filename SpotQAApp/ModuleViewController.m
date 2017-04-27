@@ -40,12 +40,13 @@
 }
 
 - (void)logout:(UIBarButtonItem *)sender {
+    sender.enabled = NO;
     if ([sender.title isEqualToString:@"Logout"]) {
-        [[SpotConversation shared] logoutSSO];
-        sender.title = @"Login";
+        [[SpotConversation shared] logoutSSOWithCompletion:^{
+            sender.title = @"Login";
+            sender.enabled = YES;
+        }];
     } else {
-        sender.enabled = NO;
-        sender.title = @"Logging In ...";
         [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
             NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:1081/getCodeB?codeA=" stringByAppendingString:codeA]]
                                                       encoding:NSUTF8StringEncoding
