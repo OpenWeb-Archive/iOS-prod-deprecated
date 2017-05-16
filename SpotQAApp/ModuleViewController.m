@@ -51,12 +51,10 @@
             NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:1081/getCodeB?codeA=" stringByAppendingString:codeA]]
                                                       encoding:NSUTF8StringEncoding
                                                          error:nil];
-            NSLog(@"Conversation %@", test);
             [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
                 if (!error) {
                     sender.enabled = YES;
                     sender.title = @"Logout";
-                    NSLog(@"success");
                 }
             }];
         }];
