@@ -9,8 +9,9 @@
 #import "ModuleViewController.h"
 #import <Spot_IM/Spot_IM.h>
 
-@interface ModuleViewController ()
+@interface ModuleViewController () <SSODelegate>
 @property (nonatomic) BOOL isPresented;
+@property (nonatomic) UIBarButtonItem *logoutButton;
 @end
 
 @implementation ModuleViewController
@@ -23,11 +24,12 @@
     self.navigationItem.hidesBackButton = YES;
     UIBarButtonItem *newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(back:)];
     self.navigationItem.leftBarButtonItem = newBackButton;
-    UIBarButtonItem *logoutButton = [[UIBarButtonItem alloc] initWithTitle:![SpotConversation shared].isLoggedIn ? @"Login" : @"Logout"
-                                                                     style:UIBarButtonItemStylePlain
-                                                                    target:self
-                                                                    action:@selector(logout:)];
-    self.navigationItem.rightBarButtonItem = logoutButton;
+    _logoutButton = [[UIBarButtonItem alloc] initWithTitle:![SpotConversation shared].isLoggedIn ? @"Login" : @"Logout"
+                                                     style:UIBarButtonItemStylePlain
+                                                    target:self
+                                                    action:@selector(logout:)];
+    self.navigationItem.rightBarButtonItem = _logoutButton;
+    [SpotConversation shared].ssoDelegate = self;
     [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
     [self.view addSubview:[SpotConversation shared]];
     [SpotConversation shared].postId = _postId;
@@ -43,7 +45,7 @@
     sender.enabled = NO;
     if ([sender.title isEqualToString:@"Logout"]) {
         [[SpotConversation shared] logoutSSOWithCompletion:^{
-            sender.title = @"Login";
+            //sender.title = @"Login";
             sender.enabled = YES;
         }];
     } else {
@@ -54,12 +56,18 @@
             [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
                 if (!error) {
                     sender.enabled = YES;
-                    sender.title = @"Logout";
+                    //sender.title = @"Logout";
+                } else {
+                    sender.title = @"ERROR";
                 }
             }];
         }];
     }
     
+}
+
+- (void)spotConversation:(SpotConversation *)spotConversation didUpdateState:(BOOL)isLoggedIn {
+    _logoutButton.title = isLoggedIn ? @"Logout" : @"Login";
 }
 
 - (void)viewDidAppear:(BOOL)animated {
