@@ -38,7 +38,7 @@
         if (!codeA && !error) {
             NSLog(@"already logged in");
         } else {
-            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:1081/getCodeB?codeA=" stringByAppendingString:codeA]]
+            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:3000/getCodeB?codeA=" stringByAppendingString:codeA]]
                                                       encoding:NSUTF8StringEncoding
                                                          error:nil];
             NSLog(@"Conversation %@", test);

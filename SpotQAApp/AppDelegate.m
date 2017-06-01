@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import <Spot_IM/Spot_IM.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [SpotConversation shared].spotId = @"sp_UPR6ufNI";
+    
     return YES;
 }
 

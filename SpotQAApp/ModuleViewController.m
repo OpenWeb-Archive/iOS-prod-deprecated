@@ -50,7 +50,7 @@
         }];
     } else {
         [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
-            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:1081/getCodeB?codeA=" stringByAppendingString:codeA]]
+            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:3000/getCodeB?codeA=" stringByAppendingString:codeA]]
                                                       encoding:NSUTF8StringEncoding
                                                          error:nil];
             [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
@@ -72,13 +72,13 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    if (_postId && [SpotConversation shared].shouldReload) {
-//        [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
-//        [self.view addSubview:[SpotConversation shared]];
-//        [SpotConversation shared].postId = _postId;
-//        [SpotConversation shared].presentingController = self;
-//        [self.view addSubview:[SpotConversation shared]];
-//    }
+    if (_postId && [SpotConversation shared].shouldReload) {
+        [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
+        [self.view addSubview:[SpotConversation shared]];
+        [SpotConversation shared].postId = _postId;
+        [SpotConversation shared].presentingController = self;
+        [self.view addSubview:[SpotConversation shared]];
+    }
 }
 
 //- (void)dismissViewControllerAnimated:(BOOL)flag completion:(void (^)(void))completion {
