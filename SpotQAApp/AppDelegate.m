@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [SpotConversation shared].spotId = @"sp_JRGmW7Ab";
+//    [SpotConversation shared].spotId = @"sp_JRGmW7Ab";
     
     return YES;
 }

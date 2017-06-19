@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Conversation</key>
+	<array>
+		<string>SpotId</string>
+		<string>PostId</string>
+	</array>
+	<key>Conversation iFrame</key>
+	<array>
+		<string>SpotId</string>
+		<string>PostId</string>
+		<string>Demo URL</string>
+	</array>
+	<key>Recirculation</key>
+	<array>
+		<string>SpotId</string>
+	</array>
+</dict>
+</plist>
