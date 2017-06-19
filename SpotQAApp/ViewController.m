@@ -52,13 +52,20 @@
     [_spotIdTextField resignFirstResponder];
 }
 
+- (IBAction)loadWebview:(id)sender {
+    [self performSegueWithIdentifier:@"presentWebview" sender:nil];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ((IntroTableViewController *)segue.destinationViewController).spotId = _spotIdTextField.text;
+    if (![segue.identifier isEqualToString:@"presentWebview"]) {
+        ((IntroTableViewController *)segue.destinationViewController).spotId = _spotIdTextField.text;
+    }
+    
 }
 
 @end

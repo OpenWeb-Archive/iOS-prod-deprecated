@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HWO-oR-sZ6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HWO-oR-sZ6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,6 +49,14 @@
                                     <segment title="Production"/>
                                 </segments>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T9L-Tk-fy2">
+                                <rect key="frame" x="99" y="476" width="177" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Load Webview iFrame"/>
+                                <connections>
+                                    <action selector="loadWebview:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NUy-wM-qtg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -65,11 +73,48 @@
                     <connections>
                         <outlet property="segment" destination="h2i-1M-je5" id="rRh-dt-Fak"/>
                         <outlet property="spotIdTextField" destination="xOi-6J-fds" id="dMf-yp-tSE"/>
+                        <segue destination="6nv-W5-T0s" kind="show" identifier="presentWebview" id="9fx-AN-MXO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="122.78860569715144"/>
+        </scene>
+        <!--Webview Read View Controller-->
+        <scene sceneID="Ib3-rR-FuS">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="6nv-W5-T0s" customClass="WebviewReadViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="elM-Q6-yUT"/>
+                        <viewControllerLayoutGuide type="bottom" id="icc-jx-aRF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="W5E-kQ-zGG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dfv-5A-Ukt">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="6nv-W5-T0s" id="RLM-zM-ulo"/>
+                                </connections>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dfv-5A-Ukt" firstAttribute="top" secondItem="elM-Q6-yUT" secondAttribute="bottom" id="Quw-l5-XXV"/>
+                            <constraint firstItem="Dfv-5A-Ukt" firstAttribute="leading" secondItem="W5E-kQ-zGG" secondAttribute="leadingMargin" constant="-16" id="UrV-H0-4ne"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dfv-5A-Ukt" secondAttribute="trailing" constant="-16" id="nB7-3D-0UB"/>
+                            <constraint firstItem="icc-jx-aRF" firstAttribute="top" secondItem="Dfv-5A-Ukt" secondAttribute="bottom" id="uG0-V5-GQu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webview" destination="Dfv-5A-Ukt" id="Nqm-eb-v0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8sY-96-EGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1056.8" y="880.20989505247383"/>
         </scene>
         <!--Intro Table View Controller-->
         <scene sceneID="rjN-Cr-f3n">
@@ -208,7 +253,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HWO-oR-sZ6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7J-fo-F7C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p7J-fo-F7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
