@@ -20,7 +20,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     if (!_demoPageLink.length) {
-        _demoPageLink = @"http://localhost/SpotIMTest.html";
+        _demoPageLink = @"http://ec2-54-245-13-126.us-west-2.compute.amazonaws.com/SpotIMTest.html";
     }
     NSURL *url = [NSURL URLWithString:_demoPageLink];
     _handler = [SpotConversationIFrameHandler new];
