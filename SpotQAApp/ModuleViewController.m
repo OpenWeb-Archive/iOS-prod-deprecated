@@ -32,7 +32,7 @@
     [SpotConversation shared].ssoDelegate = self;
     [SpotConversation shared].frame = (CGRect){0, 64, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height - 64.0};
     [self.view addSubview:[SpotConversation shared]];
-    [SpotConversation shared].postId = _postId;
+//    [SpotConversation shared].postId = _postId;
     [SpotConversation shared].presentingController = self;
 }
 

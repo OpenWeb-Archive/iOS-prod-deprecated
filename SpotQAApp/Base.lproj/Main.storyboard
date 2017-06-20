@@ -26,15 +26,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-Ge-eCu">
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jdb-Ge-eCu">
                                             <rect key="frame" x="17" y="7" width="346" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="jdb-Ge-eCu" secondAttribute="trailing" constant="12" id="Yre-OJ-oUu"/>
+                                    <constraint firstItem="jdb-Ge-eCu" firstAttribute="leading" secondItem="FFY-Yo-6Qn" secondAttribute="leading" constant="17" id="jXC-tP-1wA"/>
+                                    <constraint firstItem="jdb-Ge-eCu" firstAttribute="centerY" secondItem="FFY-Yo-6Qn" secondAttribute="centerY" id="xjd-eQ-187"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="textField" destination="jdb-Ge-eCu" id="oLI-pB-Bpt"/>
                                 </connections>
@@ -300,7 +304,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HWO-oR-sZ6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p7J-fo-F7C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7J-fo-F7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

@@ -41,7 +41,10 @@
     _menu = [NSDictionary dictionaryWithContentsOfFile:path];
     _currentIndex = -1;
     self.tableView.tableFooterView = [UIView new];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(conversationReady:) name:@"SpotConversationReadyNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(conversationReady:)
+                                                 name:@"SpotConversationReadyNotification"
+                                               object:nil];
 }
 
 
