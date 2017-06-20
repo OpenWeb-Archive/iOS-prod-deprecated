@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WebviewReadViewController : UIViewController
-
+@property (nonatomic, copy) NSString *demoPageLink;
 @end

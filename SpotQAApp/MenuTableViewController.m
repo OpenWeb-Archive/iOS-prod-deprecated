@@ -11,6 +11,7 @@
 #import "DataTableViewCell.h"
 #import <Spot_IM/Spot_IM.h>
 #import "RecirculationTableViewController.h"
+#import "WebviewReadViewController.h"
 
 @interface SpotConversation ()
 @property (nonatomic) BOOL isStaging;
@@ -55,7 +56,7 @@
         [SpotConversation shared].postId = postId;
         NSString *pick = _menu.allKeys[_currentIndex];
         if ([pick isEqualToString:@"Conversation"]) {
-            
+            [self performSegueWithIdentifier:@"Conversation" sender:nil];
         } else if ([pick isEqualToString:@"Conversation iFrame"]) {
             [self performSegueWithIdentifier:@"iFrame" sender:nil];
         }
@@ -129,6 +130,8 @@
     if ([segue.identifier isKindOfClass:[RecirculationTableViewController class]]) {
         ((RecirculationTableViewController *)segue.destinationViewController).spotId = sender;
         [SpotIM shared].staging = !_stateControl.selectedSegmentIndex;
+    } else if ([segue.destinationViewController isKindOfClass:[WebviewReadViewController class]]) {
+        ((WebviewReadViewController *)segue.destinationViewController).demoPageLink = [self.tableView.visibleCells.lastObject text];
     }
 }
 

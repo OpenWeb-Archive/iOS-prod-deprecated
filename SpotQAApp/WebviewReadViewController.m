@@ -19,7 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSURL *url = [NSURL URLWithString:@"http://localhost/SpotIMTest.html"];
+    if (!_demoPageLink.length) {
+        _demoPageLink = @"http://localhost/SpotIMTest.html";
+    }
+    NSURL *url = [NSURL URLWithString:_demoPageLink];
     _handler = [SpotConversationIFrameHandler new];
     _handler.spotIFrameWebview = _webview;
     _handler.delegate = self;
