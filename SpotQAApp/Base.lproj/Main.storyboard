@@ -43,6 +43,50 @@
                                     <outlet property="textField" destination="jdb-Ge-eCu" id="oLI-pB-Bpt"/>
                                 </connections>
                             </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="ZY3-Wz-cLj" customClass="SwitchTableViewCell">
+                                <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZY3-Wz-cLj" id="Gjb-Yq-aFx">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="v1k-gp-zfU">
+                                            <rect key="frame" x="312" y="7" width="51" height="31"/>
+                                        </switch>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable SSO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkz-ee-G4S">
+                                            <rect key="frame" x="17" y="12" width="100" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="NOy-Kr-NK8"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNy-13-FDm">
+                                            <rect key="frame" x="137" y="7" width="114" height="30"/>
+                                            <state key="normal" title="Login"/>
+                                            <connections>
+                                                <action selector="logToggle:" destination="ZY3-Wz-cLj" eventType="touchUpInside" id="G1B-vO-PvP"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="v1k-gp-zfU" firstAttribute="leading" secondItem="KNy-13-FDm" secondAttribute="trailing" constant="61" id="Qvz-WE-8ba"/>
+                                        <constraint firstItem="KNy-13-FDm" firstAttribute="leading" secondItem="Nkz-ee-G4S" secondAttribute="trailing" constant="20" id="tWh-29-CZn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="KNy-13-FDm" firstAttribute="centerY" secondItem="ZY3-Wz-cLj" secondAttribute="centerY" id="4eb-Rf-283"/>
+                                    <constraint firstAttribute="trailing" secondItem="v1k-gp-zfU" secondAttribute="trailing" constant="14" id="568-M9-Coy"/>
+                                    <constraint firstItem="v1k-gp-zfU" firstAttribute="centerY" secondItem="ZY3-Wz-cLj" secondAttribute="centerY" id="DZH-kZ-b44"/>
+                                    <constraint firstItem="Nkz-ee-G4S" firstAttribute="leading" secondItem="ZY3-Wz-cLj" secondAttribute="leading" constant="17" id="YKG-oS-sUd"/>
+                                    <constraint firstItem="Nkz-ee-G4S" firstAttribute="centerY" secondItem="ZY3-Wz-cLj" secondAttribute="centerY" id="kDc-13-VCq"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="loginButton" destination="KNy-13-FDm" id="DJW-DY-u6B"/>
+                                    <outlet property="ssoSwitch" destination="v1k-gp-zfU" id="3v5-pK-W5Y"/>
+                                </connections>
+                            </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="aR4-tT-ROd" id="1Eq-sq-Ir2"/>
@@ -304,7 +348,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HWO-oR-sZ6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p7J-fo-F7C">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="p7J-fo-F7C">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

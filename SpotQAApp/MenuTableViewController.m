@@ -12,6 +12,7 @@
 #import <Spot_IM/Spot_IM.h>
 #import "RecirculationTableViewController.h"
 #import "WebviewReadViewController.h"
+#import "SwitchTableViewCell.h"
 
 @interface SpotConversation ()
 @property (nonatomic) BOOL isStaging;
@@ -21,10 +22,11 @@
 @property (nonatomic) BOOL staging;
 @end
 
-@interface MenuTableViewController () <SectionViewDelegate>
+@interface MenuTableViewController () <SectionViewDelegate, SwitchTableViewCellDelegate>
 @property (nonatomic, copy) NSDictionary *menu;
 @property (nonatomic) NSInteger currentIndex;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *stateControl;
+@property (nonatomic) SwitchTableViewCell *switchCell;
 @end
 
 @implementation MenuTableViewController
@@ -71,12 +73,35 @@
     NSString *spotId = [self.tableView.visibleCells.firstObject text];
     [SpotConversation shared].isStaging = !_stateControl.selectedSegmentIndex;
     if ([pick isEqualToString:@"Conversation"]) {
-        [SpotConversation shared].spotId = spotId;
+        [self prepareConversation:spotId];
     } else if ([pick isEqualToString:@"Conversation iFrame"]) {
-        [SpotConversation shared].spotId = spotId;
+        [self prepareConversation:spotId];
     } else {
         [self performSegueWithIdentifier:@"Recirculation" sender:spotId];
     }
+}
+
+- (void)prepareConversation:(NSString *)spotId {
+    [SpotConversation shared].spotId = spotId;
+    if (_switchCell.isEnabled) {
+        [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
+            if (!codeA && !error) {
+                _switchCell.loggedIn = YES;
+                return;
+            }
+            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:3000/getCodeB?codeA=" stringByAppendingString:codeA]]
+                                                      encoding:NSUTF8StringEncoding
+                                                         error:nil];
+            [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
+                if (!error) {
+                    _switchCell.loggedIn = YES;
+                } else {
+                    NSLog(@"SSO ERROR::: %@", error.description);
+                }
+            }];
+        }];
+    }
+    
 }
 
 
@@ -101,8 +126,15 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    cell.hint = _menu.allValues[_currentIndex][indexPath.row];
+    NSString *identifier = [_menu.allValues[_currentIndex][indexPath.row] lastObject];
+    DataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    if ([cell respondsToSelector:@selector(setHint:)]) {
+        cell.hint = [_menu.allValues[_currentIndex][indexPath.row] firstObject];
+    } else {
+        _switchCell = (SwitchTableViewCell *)cell;
+        _switchCell.delegate = self;
+    }
+    
     // Configure the cell...
     
     return cell;
@@ -127,6 +159,33 @@
         [self.tableView insertRowsAtIndexPaths:indexes withRowAnimation:UITableViewRowAnimationRight];
     }
 }
+
+
+- (void)cell:(SwitchTableViewCell *)cell didChangeLoginState:(BOOL)isLoggedIn {
+    if (isLoggedIn) {
+        [[SpotConversation shared] logoutSSOWithCompletion:^{
+            _switchCell.loggedIn = NO;
+        }];
+    } else {
+        [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
+            if (!codeA && !error) {
+                _switchCell.loggedIn = YES;
+                return;
+            }
+            NSString *test = [NSString stringWithContentsOfURL:[NSURL URLWithString:[@"http://127.0.0.1:3000/getCodeB?codeA=" stringByAppendingString:codeA]]
+                                                      encoding:NSUTF8StringEncoding
+                                                         error:nil];
+            [[SpotConversation shared] completeSSO:test completion:^(NSError *error) {
+                if (!error) {
+                    _switchCell.loggedIn = YES;
+                } else {
+                }
+            }];
+        }];
+    }
+    
+}
+
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

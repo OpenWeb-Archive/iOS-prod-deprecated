@@ -4,18 +4,44 @@
 <dict>
 	<key>Conversation</key>
 	<array>
-		<string>SpotId</string>
-		<string>PostId</string>
+		<array>
+			<string>SpotId</string>
+			<string>Cell</string>
+		</array>
+		<array>
+			<string>PostId</string>
+			<string>Cell</string>
+		</array>
+		<array>
+			<string></string>
+			<string>SwitchCell</string>
+		</array>
 	</array>
 	<key>Conversation iFrame</key>
 	<array>
-		<string>SpotId</string>
-		<string>PostId</string>
-		<string>Demo URL</string>
+		<array>
+			<string>SpotId</string>
+			<string>Cell</string>
+		</array>
+		<array>
+			<string>PostId</string>
+			<string>Cell</string>
+		</array>
+		<array>
+			<string></string>
+			<string>SwitchCell</string>
+		</array>
+		<array>
+			<string>Demo URL</string>
+			<string>Cell</string>
+		</array>
 	</array>
 	<key>Recirculation</key>
 	<array>
-		<string>SpotId</string>
+		<array>
+			<string>SpotId</string>
+			<string>Cell</string>
+		</array>
 	</array>
 </dict>
 </plist>

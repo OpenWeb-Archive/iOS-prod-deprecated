@@ -10,4 +10,5 @@
 
 @interface WebviewReadViewController : UIViewController
 @property (nonatomic, copy) NSString *demoPageLink;
+@property (nonatomic) BOOL ssoEnabled;
 @end
