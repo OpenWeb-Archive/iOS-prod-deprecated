@@ -1,0 +1,152 @@
+## About
+This is the iOS sample app for Spot.IM with the native iOS Spot.IM SDK. 
+Spot.IM SDK allows easy integrating [Spot.IM](http://www.spot.im) into a native Android application. 
+
+## Prerequisites
+
+To use the SDK you will need an active Spot.IM account. If you don't have it, get one [here](http://www.spot.im).  
+You will need to know your Spot ID (which looks like 'sp_xxxxxxx'). 
+If you don't know your Spot ID, login to the [admin dashboard](https://admin.spot.im) and have a look at the URL.
+
+# Demo
+
+## Adding the SDK to an existing XCode project
+
+1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/ios-demo-app/files/1108596/Spot_IM.framework.zip) (for  development).
+2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/ios-demo-app/files/1108601/Spot_IM.framework.zip).
+2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
+3. Click on the `add Other..`.
+4. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
+
+![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
+
+
+## Using the SDK
+If you are using swift you will need to add
+[Bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+
+
+### Spot.IM Conversation
+
+In the `AppDelegate`, initialize the SDK with your Spot ID ('sp_xxxxxxxx'):
+
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        // Override point for customization after application launch.
+        SpotConversation.shared().spotId = "sp_xxxxxxxx"
+        return true
+    }
+```
+
+In the view controller which should present the convesation view, add:
+
+```swift
+override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+        
+        SpotConversation.shared().frame = CGRect.init(x: 0, y: 64, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height - 64)
+        self.view.addSubview(SpotConversation.shared())
+        SpotConversation.shared().postId = "12345" // The item's ID
+        SpotConversation.shared().presentingController = self
+    }
+```
+
+### IFrame Handler
+
+If you want to present Spot IM conversation when user will click on Spot IM's iframe in your webview, you should use `SpotConversationIFrameHandler` :
+
+``` swift
+    func registerSpotIframeHandler() {
+        self.handler = SpotConversationIFrameHandler()
+        self.handler.spotIFrameWebview = webview
+        self.handler.delegate = self
+    }
+
+    // ConversationIFrameDelegate
+    func shouldLoadSpotConversation(_ controller: SpotConversationViewController!) {
+        self.present(controller, animated: true, completion: nil)
+    }
+``` 
+
+When the user will click on the SpotIM's iframe the delegate will be triggered and you can present the `SpotConversationViewController`
+
+
+### SSO (Single Sign On)
+
+In order to use the SSO, your account must be SSO-enabled. If you'd like to enable SSO on your account, please contact support@spot.im.
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    SpotConversation.shared().ssoDelegate = self
+}
+
+// Delegate 
+func spotConversation(_ spotConversation: SpotConversation!, didUpdateState isLoggedIn: Bool) {
+        // Update the UI according to the isLoggedIn state
+}
+
+func logoin() -> Void {
+    SpotConversation.shared().startSSO(handler: { (codeA: String?, error: Error?) in
+                if codeA != nil {
+                    // Fetch the code B params from your server
+                    let codeB: String = ...
+                    if codeB != nil {
+                        SpotConversation.shared().completeSSO(test, completion: { (error: Error?) in
+                            if error == nil {
+                                // update your UI 
+                            } else {
+                                // Handle the error with codeB
+                            }
+                        })
+                    }
+                } else if codeA == nil && error == nil {
+                    // Already logged in
+                } else {
+                    // Handle error 
+                }
+            })
+}
+
+func logout() -> Void {
+    SpotConversation.shared().logoutSSO(completion: { 
+                // Update the UI
+            })
+}
+```
+
+### Spot.IM "Popular In the Community" Carousel
+In desired view controller, add:
+
+```swift
+var spotController: SpotIMController!
+
+
+override func viewDidLoad() {
+        super.viewDidLoad()
+        spotController = SpotIMController.init()
+        spotController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 452)
+        spotController.spotId = "sp_xxxxxxxx" // your Spot ID
+        spotController.configuration.title = "Title"
+        let cell: UITableViewCell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0))!
+        cell.contentView.addSubview(spotController.view)
+    }
+    
+    
+    
+    // Handle Rotation
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { (context) in
+            self.spotController.view.frame = CGRect.init(origin: CGPoint.init(), size: CGSize.init(width: size.width, height: 452.0))
+        }) { (context) in
+            
+        }
+    }
+```
+
+
+## Support
+
+Feedback and inquires can be sent to love@spot.im
