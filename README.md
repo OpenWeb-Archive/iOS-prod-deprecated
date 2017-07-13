@@ -12,8 +12,8 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 
 ## Adding the SDK to an existing XCode project
 
-1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1145019/Spot_IM.framework.2.zip) (for  development).
-2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1145026/Spot_IM.framework.zip).
+1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1146147/Spot_IM.framework.zip) (for  development).
+2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1146158/Spot_IM.framework.zip).
 2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
 3. Click on the `add Other..`.
 4. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
