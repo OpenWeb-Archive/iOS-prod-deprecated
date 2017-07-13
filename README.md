@@ -1,17 +1,3 @@
-## About
-This is the iOS sample app for Spot.IM with the native iOS Spot.IM SDK. 
-Spot.IM SDK allows easy integrating [Spot.IM](http://www.spot.im) into a native Android application. 
-
-## Prerequisites
-
-To use the SDK you will need an active Spot.IM account. If you don't have it, get one [here](http://www.spot.im).  
-You will need to know your Spot ID (which looks like 'sp_xxxxxxx'). 
-If you don't know your Spot ID, login to the [admin dashboard](https://admin.spot.im) and have a look at the URL.
-
-# Demo
-
-## Adding the SDK to an existing XCode project
-
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1145019/Spot_IM.framework.2.zip) (for  development).
 2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1145026/Spot_IM.framework.zip).
 2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
@@ -51,6 +37,13 @@ override func viewDidLoad() {
         SpotConversation.shared().postId = "12345" // The item's ID
         SpotConversation.shared().presentingController = self
     }
+```
+
+### Set Messages Count
+
+If you want to present specific amount of messages you can set it:
+``` swift
+    SpotConversation.shared().messages = 8
 ```
 
 ### IFrame Handler

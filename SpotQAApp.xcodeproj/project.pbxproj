@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F2196561F17E81700E5EAC9 /* Spot_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2196551F17E81700E5EAC9 /* Spot_IM.framework */; };
+		5F2196571F17E81700E5EAC9 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2196551F17E81700E5EAC9 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F479FF81E35E1CA00DCBDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FF71E35E1CA00DCBDD7 /* main.m */; };
 		5F479FFB1E35E1CA00DCBDD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */; };
 		5F479FFE1E35E1CA00DCBDD7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFD1E35E1CA00DCBDD7 /* ViewController.m */; };
@@ -22,8 +24,6 @@
 		5FBACA451EF86332004920D4 /* SectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FBACA441EF86332004920D4 /* SectionView.xib */; };
 		5FBACA481EF866D5004920D4 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBACA471EF866D5004920D4 /* MenuTableViewController.m */; };
 		5FBACA4B1EF86829004920D4 /* DataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBACA4A1EF86829004920D4 /* DataTableViewCell.m */; };
-		5FD6B03C1F0E4DF80041C696 /* Spot_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6B03B1F0E4DF80041C696 /* Spot_IM.framework */; };
-		5FD6B03D1F0E4DF80041C696 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD6B03B1F0E4DF80041C696 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FF99F421E50F17A006998E7 /* RecirculationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FF99F411E50F17A006998E7 /* RecirculationTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FD6B03D1F0E4DF80041C696 /* Spot_IM.framework in Embed Frameworks */,
+				5F2196571F17E81700E5EAC9 /* Spot_IM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,6 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F2196551F17E81700E5EAC9 /* Spot_IM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spot_IM.framework; sourceTree = "<group>"; };
 		5F479FF31E35E1CA00DCBDD7 /* SpotQAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotQAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F479FF71E35E1CA00DCBDD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F479FF91E35E1CA00DCBDD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		5FBACA471EF866D5004920D4 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewController.m; sourceTree = "<group>"; };
 		5FBACA491EF86829004920D4 /* DataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableViewCell.h; sourceTree = "<group>"; };
 		5FBACA4A1EF86829004920D4 /* DataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableViewCell.m; sourceTree = "<group>"; };
-		5FD6B03B1F0E4DF80041C696 /* Spot_IM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spot_IM.framework; sourceTree = "<group>"; };
 		5FF99F401E50F17A006998E7 /* RecirculationTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecirculationTableViewController.h; sourceTree = "<group>"; };
 		5FF99F411E50F17A006998E7 /* RecirculationTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecirculationTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FD6B03C1F0E4DF80041C696 /* Spot_IM.framework in Frameworks */,
+				5F2196561F17E81700E5EAC9 /* Spot_IM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 		5F479FEA1E35E1CA00DCBDD7 = {
 			isa = PBXGroup;
 			children = (
-				5FD6B03B1F0E4DF80041C696 /* Spot_IM.framework */,
+				5F2196551F17E81700E5EAC9 /* Spot_IM.framework */,
 				5F479FF51E35E1CA00DCBDD7 /* SpotQAApp */,
 				5F479FF41E35E1CA00DCBDD7 /* Products */,
 			);

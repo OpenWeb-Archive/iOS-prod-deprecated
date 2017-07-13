@@ -24,7 +24,13 @@
 @property (nonatomic, readonly) BOOL isReady;
 @property (nonatomic, readonly) BOOL isLoggedIn;
 @property (nonatomic, weak) id<SSODelegate> ssoDelegate;
+@property (nonatomic, readonly) BOOL isModalState;
 
+@property (nonatomic) NSInteger cacheSize;
+@property (nonatomic) NSInteger messages;
+
+
+- (void)dismissModal;
 - (void)startSSOWithHandler:(void(^)(NSString *codeA, NSError *error))handler;
 - (void)completeSSO:(NSString *)codeB completion:(void(^)(NSError *error))completion;
 - (void)logoutSSOWithCompletion:(void(^)())completion;
