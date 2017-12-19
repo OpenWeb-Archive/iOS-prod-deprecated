@@ -27,6 +27,11 @@
 @property (nonatomic) NSInteger currentIndex;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *stateControl;
 @property (nonatomic) SwitchTableViewCell *switchCell;
+
+@property (nonatomic) NSString *spotID;
+@property (nonatomic) NSString *postID;
+@property BOOL shouldLoadDefaultValues;
+
 @end
 
 @implementation MenuTableViewController
@@ -34,6 +39,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Swith to FALSE if no default values desired:
+    _shouldLoadDefaultValues = YES;
+    _spotID = @"sp_IjnMf2Jd"; //AOL
+    _postID = @"23310680"; // Post X
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -53,6 +62,15 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// in Order to Load the Default Values:
+
+- (void)loadDefaultValue:(NSString *) spotID andPost:(NSString *) postID {
+    [self.tableView.visibleCells.firstObject setText:spotID];
+    for (int i = 0; i < [_menu.allKeys count]; i++) {
+        [self.tableView.visibleCells[1] setText:postID];
+    }
 }
 
 - (void)conversationReady:(NSNotification *)notification {
@@ -129,12 +147,21 @@
     NSString *identifier = [_menu.allValues[_currentIndex][indexPath.row] lastObject];
     DataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     if ([cell respondsToSelector:@selector(setHint:)]) {
-        cell.hint = [_menu.allValues[_currentIndex][indexPath.row] firstObject];
+        NSArray* menuValues = _menu.allValues[_currentIndex][indexPath.row];
+        cell.hint = [menuValues firstObject];
+        // Loading Default Values:
+        if (self.shouldLoadDefaultValues) {
+            if ([[menuValues firstObject] isEqualToString:@"SpotId"]) {
+                [cell setDefaultText:_spotID];
+            }
+            if ([[menuValues firstObject] isEqualToString:@"PostId"]) {
+                [cell setDefaultText:_postID];
+            }
+        }
     } else {
         _switchCell = (SwitchTableViewCell *)cell;
         _switchCell.delegate = self;
     }
-    
     // Configure the cell...
     
     return cell;
