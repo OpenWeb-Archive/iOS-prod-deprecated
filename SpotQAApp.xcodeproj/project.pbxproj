@@ -102,13 +102,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		120513B41FEFD86C00FDAA80 /* SDK */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = SDK;
-			sourceTree = "<group>";
-		};
 		120513B61FEFEEE200FDAA80 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,7 +130,6 @@
 		5F479FF51E35E1CA00DCBDD7 /* SpotQAApp */ = {
 			isa = PBXGroup;
 			children = (
-				120513B41FEFD86C00FDAA80 /* SDK */,
 				5F479FF91E35E1CA00DCBDD7 /* AppDelegate.h */,
 				5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */,
 				5F479FFC1E35E1CA00DCBDD7 /* ViewController.h */,

@@ -32,6 +32,10 @@
 @property (nonatomic) NSString *postID;
 @property BOOL shouldLoadDefaultValues;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnLoad;
+@property (nonatomic) UIActivityIndicatorView *loader;
+
+
 @end
 
 @implementation MenuTableViewController
@@ -74,6 +78,7 @@
 }
 
 - (void)conversationReady:(NSNotification *)notification {
+    [_loader stopAnimating];
     if (self.tableView.visibleCells.count > 1) {
         NSString *postId = [self.tableView.visibleCells[1] text];
         [SpotConversation shared].postId = postId;
@@ -99,7 +104,20 @@
     }
 }
 
+- (void)showLoader {
+    if (_loader == nil) {
+        _loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _loader.hidesWhenStopped = YES;
+        _loader.frame = self.view.frame;
+        [self.view addSubview:_loader];
+    }
+    [_loader startAnimating];
+}
+
 - (void)prepareConversation:(NSString *)spotId {
+    // Updating the UI:
+    [self showLoader];
+    ////
     [SpotConversation shared].spotId = spotId;
     if (_switchCell.isEnabled) {
         [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
