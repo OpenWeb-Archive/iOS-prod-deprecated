@@ -42,7 +42,7 @@
     // Swith to FALSE if no default values desired:
     _shouldLoadDefaultValues = YES;
     _spotID = @"sp_IjnMf2Jd"; //AOL
-    _postID = @"23310680"; // Post X
+    _postID = @"23307176"; // Post @ Production
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
