@@ -11,4 +11,6 @@
 @interface DataTableViewCell : UITableViewCell
 @property (nonatomic, copy) NSString *hint;
 @property (nonatomic, readonly, copy) NSString *text;
+- (void)setDefaultText:(NSString *)text;
+
 @end

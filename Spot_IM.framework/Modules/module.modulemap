@@ -1,6 +1,0 @@
-framework module Spot_IM {
-  umbrella header "Spot_IM.h"
-
-  export *
-  module * { export * }
-}

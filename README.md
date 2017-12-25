@@ -12,8 +12,8 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 
 ## Adding the SDK to an existing XCode project
 
-1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1146147/Spot_IM.framework.zip) (for  development).
-2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1146158/Spot_IM.framework.zip).
+1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1585970/Spot_IM.framework.zip) (for  development).
+2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/ios-demo-app/files/1108601/Spot_IM.framework.zip).
 2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
 3. Click on the `add Other..`.
 4. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
@@ -51,13 +51,6 @@ override func viewDidLoad() {
         SpotConversation.shared().postId = "12345" // The item's ID
         SpotConversation.shared().presentingController = self
     }
-```
-
-### Set Messages Count
-
-If you want to present specific amount of messages you can set it:
-``` swift
-    SpotConversation.shared().messages = 8
 ```
 
 ### IFrame Handler

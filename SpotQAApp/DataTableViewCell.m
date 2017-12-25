@@ -23,6 +23,10 @@
     _textField.placeholder = hint;
 }
 
+- (void)setDefaultText:(NSString *)text {
+    _textField.text = text;
+}
+
 - (NSString *)text {
     return _textField.text;
 }

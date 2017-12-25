@@ -27,6 +27,15 @@
 @property (nonatomic) NSInteger currentIndex;
 @property (nonatomic, weak) IBOutlet UISegmentedControl *stateControl;
 @property (nonatomic) SwitchTableViewCell *switchCell;
+
+@property (nonatomic) NSString *spotID;
+@property (nonatomic) NSString *postID;
+@property BOOL shouldLoadDefaultValues;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnLoad;
+@property (nonatomic) UIActivityIndicatorView *loader;
+
+
 @end
 
 @implementation MenuTableViewController
@@ -34,6 +43,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    // Swith to FALSE if no default values desired:
+    _shouldLoadDefaultValues = YES;
+    _spotID = @"sp_IjnMf2Jd"; //AOL
+    _postID = @"23307176"; // Post @ Production
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -55,7 +68,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+// in Order to Load the Default Values:
+
+- (void)loadDefaultValue:(NSString *) spotID andPost:(NSString *) postID {
+    [self.tableView.visibleCells.firstObject setText:spotID];
+    for (int i = 0; i < [_menu.allKeys count]; i++) {
+        [self.tableView.visibleCells[1] setText:postID];
+    }
+}
+
 - (void)conversationReady:(NSNotification *)notification {
+    [_loader stopAnimating];
     if (self.tableView.visibleCells.count > 1) {
         NSString *postId = [self.tableView.visibleCells[1] text];
         [SpotConversation shared].postId = postId;
@@ -81,7 +104,20 @@
     }
 }
 
+- (void)showLoader {
+    if (_loader == nil) {
+        _loader = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _loader.hidesWhenStopped = YES;
+        _loader.frame = self.view.frame;
+        [self.view addSubview:_loader];
+    }
+    [_loader startAnimating];
+}
+
 - (void)prepareConversation:(NSString *)spotId {
+    // Updating the UI:
+    [self showLoader];
+    ////
     [SpotConversation shared].spotId = spotId;
     if (_switchCell.isEnabled) {
         [[SpotConversation shared] startSSOWithHandler:^(NSString *codeA, NSError *error) {
@@ -129,12 +165,21 @@
     NSString *identifier = [_menu.allValues[_currentIndex][indexPath.row] lastObject];
     DataTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
     if ([cell respondsToSelector:@selector(setHint:)]) {
-        cell.hint = [_menu.allValues[_currentIndex][indexPath.row] firstObject];
+        NSArray* menuValues = _menu.allValues[_currentIndex][indexPath.row];
+        cell.hint = [menuValues firstObject];
+        // Loading Default Values:
+        if (self.shouldLoadDefaultValues) {
+            if ([[menuValues firstObject] isEqualToString:@"SpotId"]) {
+                [cell setDefaultText:_spotID];
+            }
+            if ([[menuValues firstObject] isEqualToString:@"PostId"]) {
+                [cell setDefaultText:_postID];
+            }
+        }
     } else {
         _switchCell = (SwitchTableViewCell *)cell;
         _switchCell.delegate = self;
     }
-    
     // Configure the cell...
     
     return cell;
