@@ -24,16 +24,13 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 ## Using the SDK
 If you are using swift you will need to add
 [Bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
-
 Here is a simple explanation on how to add a Bridging header:
-
-[Manually add a Bridging header] (https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html).
-
+[Manually add a Bridging header](https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html).
 the .h file should now include the following lines:
 
-'''
+```
 #import <Spot_IM/Spot_IM.h>
-''''
+```
 
 ### Spot.IM Conversation
 
