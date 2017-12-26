@@ -1,6 +1,6 @@
 ## About
 This is the iOS sample app for Spot.IM with the native iOS Spot.IM SDK. 
-Spot.IM SDK allows easy integrating [Spot.IM](http://www.spot.im) into a native Android application. 
+Spot.IM SDK allows easy integrating [Spot.IM](http://www.spot.im) into a native iOS application. 
 
 ## Prerequisites
 
