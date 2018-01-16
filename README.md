@@ -14,9 +14,10 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1146147/Spot_IM.framework.zip) (for  development).
 2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1146158/Spot_IM.framework.zip).
-2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
-3. Click on the `add Other..`.
-4. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
+3. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
+4. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
+5. Click on the `add Other..`.
+6. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
 
 ![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
 
@@ -162,6 +163,9 @@ override func viewDidLoad() {
     }
 ```
 
+## License
+
+the Spot.IM SDK is released under a custom MIT license. [See LICENSE](https://github.com/SpotIM/iOS-prod/blob/master/LICENSE) for details.
 
 ## Support
 
