@@ -12,11 +12,12 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 
 ## Adding the SDK to an existing XCode project
 
-1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1585970/Spot_IM.framework.zip) (for  development).
-2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/ios-demo-app/files/1108601/Spot_IM.framework.zip).
-2. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
-3. Click on the `add Other..`.
-4. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
+1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1146147/Spot_IM.framework.zip) (for  development).
+2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1146158/Spot_IM.framework.zip).
+3. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
+4. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
+5. Click on the `add Other..`.
+6. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
 
 ![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
 
@@ -24,13 +25,16 @@ If you don't know your Spot ID, login to the [admin dashboard](https://admin.spo
 ## Using the SDK
 If you are using swift you will need to add
 [Bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+
 Here is a simple explanation on how to add a Bridging header:
-[Manually add a Bridging header](https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html).
+
+[Manually add a Bridging header] (https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html).
+
 the .h file should now include the following lines:
 
-```
+'''
 #import <Spot_IM/Spot_IM.h>
-```
+''''
 
 ### Spot.IM Conversation
 
@@ -57,6 +61,13 @@ override func viewDidLoad() {
         SpotConversation.shared().postId = "12345" // The item's ID
         SpotConversation.shared().presentingController = self
     }
+```
+
+### Set Messages Count
+
+If you want to present specific amount of messages you can set it:
+``` swift
+    SpotConversation.shared().messages = 8
 ```
 
 ### IFrame Handler
@@ -152,6 +163,9 @@ override func viewDidLoad() {
     }
 ```
 
+## License
+
+the Spot.IM SDK is released under a custom MIT license. [See LICENSE](https://github.com/SpotIM/iOS-prod/blob/master/LICENSE) for details.
 
 ## Support
 
