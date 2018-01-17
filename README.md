@@ -2,6 +2,7 @@
 
 ## Welcome to the Spot.IM SDK
 Here's a sample app that shows how to use the Spot.IM SDK for iOS. 
+
 Spot.IM SDK provides an easy integration with [Spot.IM](http://www.spot.im) into a native iOS app. 
 
 ## Getting started
