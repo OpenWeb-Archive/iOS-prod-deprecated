@@ -1,8 +1,8 @@
 ![Spotim: Spot.IM iOS SDK](https://github.com/SpotIM/iOS-prod/blob/master/SpotQAApp/Resources/iOS_SDK_BIG.jpg)
 
-## About
-This is the iOS sample app for Spot.IM with the native iOS Spot.IM SDK. 
-Spot.IM SDK allows easy integrating [Spot.IM](http://www.spot.im) into a native iOS application. 
+## Welcome to the Spot.IM SDK
+Here's a sample app that shows how to use the Spot.IM SDK for iOS. 
+Spot.IM SDK provides an easy integration with [Spot.IM](http://www.spot.im) into a native iOS app. 
 
 ## Prerequisites
 
