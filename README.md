@@ -4,7 +4,7 @@
 Here's a sample app that shows how to use the Spot.IM SDK for iOS. 
 Spot.IM SDK provides an easy integration with [Spot.IM](http://www.spot.im) into a native iOS app. 
 
-## Prerequisites
+## What you'll need to get started
 
 To use the SDK you will need an active Spot.IM account. If you don't have it, get one [here](http://www.spot.im).  
 You will need to know your Spot ID (which looks like 'sp_xxxxxxx'). 
