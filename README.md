@@ -11,8 +11,6 @@ To use the SDK you will need an active Spot.IM account. If you don't have it, ge
 You will need to know your Spot ID (which looks like 'sp_xxxxxxx'). 
 If you don't know your Spot ID, login to the [admin dashboard](https://admin.spot.im) and have a look at the URL.
 
-# Demo
-
 ## Adding the SDK to an existing XCode project
 
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1146147/Spot_IM.framework.zip) (for  development).
