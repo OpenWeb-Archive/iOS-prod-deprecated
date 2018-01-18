@@ -12,7 +12,22 @@ To use the SDK you will need an active Spot.IM account. If you don't have it, ge
 You will need to know your Spot ID (which looks like 'sp_xxxxxxx'). 
 If you don't know your Spot ID, login to the [admin dashboard](https://admin.spot.im) and have a look at the URL.
 
-## Adding the SDK to an existing XCode project
+## POD Installation
+
+SpotIM is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'SpotIM'
+```
+and then Running:
+
+```ruby
+pod install
+```
+Or if you prefer the old-school way:
+
+## Manually Adding the SDK to an existing XCode project
 
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1639390/Spot_IM.framework.zip) (for  development and compiling on any device + simulator).
 2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1639377/Spot_IM.framework.zip). (you MUST use this version to submit your app to the Appstore)
