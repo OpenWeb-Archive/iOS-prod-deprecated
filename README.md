@@ -165,6 +165,10 @@ override func viewDidLoad() {
     }
 ```
 
+## Conversation Preview
+
+(https://user-images.githubusercontent.com/607917/35106483-002cf8c8-fc77-11e7-99e1-459c7b9428c1.png)
+
 ## License
 
 the Spot.IM SDK is released under a custom license based on MIT. [See LICENSE](https://github.com/SpotIM/iOS-prod/blob/master/LICENSE) for details.
