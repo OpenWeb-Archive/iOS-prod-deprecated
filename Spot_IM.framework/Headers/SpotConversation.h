@@ -29,6 +29,7 @@
 @property (nonatomic) NSInteger cacheSize;
 @property (nonatomic) NSInteger messages;
 
+@property (nonatomic, copy, readonly) NSString *host;
 
 - (void)dismissModal;
 - (void)startSSOWithHandler:(void(^)(NSString *codeA, NSError *error))handler;
