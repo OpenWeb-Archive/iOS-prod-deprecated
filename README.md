@@ -182,7 +182,7 @@ override func viewDidLoad() {
 
 ## Conversation Preview
 
-<img src="https://user-images.githubusercontent.com/607917/35106483-002cf8c8-fc77-11e7-99e1-459c7b9428c1.png" width="425"/> <img src="https://user-images.githubusercontent.com/607917/35106518-165d4300-fc77-11e7-999d-efde71208596.png" width="425"/> 
+<img src="https://user-images.githubusercontent.com/607917/35287547-4076605c-006b-11e8-9674-a1c9e4f8f681.png" width="300"/> <img src="https://user-images.githubusercontent.com/607917/35287551-423452be-006b-11e8-96e9-7bf7a3ae27b6.png" width="300"/> <img src="https://user-images.githubusercontent.com/607917/35287552-4259dc5a-006b-11e8-9a27-c14b37a5a32b.png" width="300"/> 
 
 ## License
 
