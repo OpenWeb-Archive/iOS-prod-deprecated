@@ -52,9 +52,9 @@ Here is a simple explanation on how to add a Bridging header:
 
 the .h file should now include the following lines:
 
-'''
+```
 #import <Spot_IM/Spot_IM.h>
-''''
+```
 
 ### Spot.IM Conversation
 
