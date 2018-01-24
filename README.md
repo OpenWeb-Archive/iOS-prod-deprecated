@@ -7,7 +7,7 @@ Spot.IM SDK provides an easy integration with [Spot.IM](http://www.spot.im) into
 Here's a sample app that shows how to use the Spot.IM SDK for iOS.
 
 ## Conversation Preview
-<img src="https://user-images.githubusercontent.com/607917/35287552-4259dc5a-006b-11e8-9a27-c14b37a5a32b.png" width="280"/> <img src="https://user-images.githubusercontent.com/607917/35287547-4076605c-006b-11e8-9674-a1c9e4f8f681.png" width="280"/> <img src="https://user-images.githubusercontent.com/607917/35287551-423452be-006b-11e8-96e9-7bf7a3ae27b6.png" width="280"/> 
+<img src="https://user-images.githubusercontent.com/607917/35287552-4259dc5a-006b-11e8-9a27-c14b37a5a32b.png" width="280"/> .   <img src="https://user-images.githubusercontent.com/607917/35287547-4076605c-006b-11e8-9674-a1c9e4f8f681.png" width="280"/> .   <img src="https://user-images.githubusercontent.com/607917/35287551-423452be-006b-11e8-96e9-7bf7a3ae27b6.png" width="280"/> 
 
 ## Getting started
 
