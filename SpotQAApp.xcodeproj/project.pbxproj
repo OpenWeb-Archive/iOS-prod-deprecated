@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		128749CC1FF3D80F00D5DDF9 /* Spot_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 128749CA1FF3D80800D5DDF9 /* Spot_IM.framework */; };
-		128749CD1FF3D80F00D5DDF9 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 128749CA1FF3D80800D5DDF9 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		12FE0626201A3DAE0086DDB0 /* Spot_IM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12FE0624201A3DA00086DDB0 /* Spot_IM.framework */; };
+		12FE0627201A3DAE0086DDB0 /* Spot_IM.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12FE0624201A3DA00086DDB0 /* Spot_IM.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5F479FF81E35E1CA00DCBDD7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FF71E35E1CA00DCBDD7 /* main.m */; };
 		5F479FFB1E35E1CA00DCBDD7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFA1E35E1CA00DCBDD7 /* AppDelegate.m */; };
 		5F479FFE1E35E1CA00DCBDD7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F479FFD1E35E1CA00DCBDD7 /* ViewController.m */; };
@@ -34,7 +34,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				128749CD1FF3D80F00D5DDF9 /* Spot_IM.framework in Embed Frameworks */,
+				12FE0627201A3DAE0086DDB0 /* Spot_IM.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,7 +42,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		128749CA1FF3D80800D5DDF9 /* Spot_IM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spot_IM.framework; sourceTree = SOURCE_ROOT; };
+		12FE0624201A3DA00086DDB0 /* Spot_IM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spot_IM.framework; sourceTree = SOURCE_ROOT; };
 		5F479FF31E35E1CA00DCBDD7 /* SpotQAApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotQAApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F479FF71E35E1CA00DCBDD7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5F479FF91E35E1CA00DCBDD7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -78,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				128749CC1FF3D80F00D5DDF9 /* Spot_IM.framework in Frameworks */,
+				12FE0626201A3DAE0086DDB0 /* Spot_IM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +88,7 @@
 		128749C41FF1562500D5DDF9 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				128749CA1FF3D80800D5DDF9 /* Spot_IM.framework */,
+				12FE0624201A3DA00086DDB0 /* Spot_IM.framework */,
 			);
 			path = SDK;
 			sourceTree = "<group>";
