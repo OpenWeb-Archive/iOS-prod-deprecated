@@ -20,4 +20,3 @@
 @property (nonatomic, strong) Extract *extract;
 @property (nonatomic, copy) NSString *url;
 @end
- 
