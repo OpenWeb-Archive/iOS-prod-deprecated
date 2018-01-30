@@ -32,7 +32,7 @@ Or if you prefer the old-school way:
 
 ## Manually Adding the SDK to an existing XCode project
 
-1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1677802/Spot_IM.framework.zip) (for  development and compiling on any device + simulator).
+1. Download the [Spot_IM.framework Universal](https://s3.amazonaws.com/spot.im.artifacts/ios/Latest/Spot_IM.framework.zip)
 2. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
 3. Choose the project and the target, and drag the `Spot_IM.framework` to the `Embedded Binaries` Section. 
 OR you can also:
