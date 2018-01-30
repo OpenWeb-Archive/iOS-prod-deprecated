@@ -185,34 +185,41 @@ override func viewDidLoad() {
 ## Appstore Submission
 - If you Installed the SDK via Cocoapods, then you are free to skip this section.
 
-- If you Installed the SDK Manually, you will have to add this Script to remove the Simulator Slice of the SDK (You probably already have this Script if you are using other Universal frameworks):
+- If you Installed the SDK Manually, you will have to add this Script to remove the Simulator Slice of the SDK (You probably already have this Script if you are using other Universal frameworks)
+
+Add this to the build phase:
+(Credit for the script to Daniel Kennett: http://ikennd.ac/blog/2015/02/stripping-unwanted-architectures-from-dynamic-libraries-in-xcode/)
 
 ```bash
 
-#!/bin/bash
+APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
 
-copy_framework ()
-{
-    local framework=$1
-    local frameworks_folder="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+# This script loops through the frameworks embedded in the application and
+# removes unused architectures.
+find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
+do
+    FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
+    FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
+    echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
 
-    mkdir -p "$frameworks_folder"
-    rsync -av "$framework" "$frameworks_folder"
+    EXTRACTED_ARCHS=()
 
-    local file_path="$frameworks_folder/`basename $framework`/`basename $framework .framework`"
+    for ARCH in $ARCHS
+    do
+        echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
+        lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
+        EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
+    done
 
-    if [[ ! "$VALID_ARCHS" =~ "$i386" ]];
-    then
-        lipo -remove i386 "$file_path" -output "$file_path"
-    fi
+    echo "Merging extracted architectures: ${ARCHS}"
+    lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
+    rm "${EXTRACTED_ARCHS[@]}"
 
-    if [[ ! "$VALID_ARCHS" =~ "$x86_64" ]];
-    then
-        lipo -remove x86_64 "$file_path" -output "$file_path"
-    fi
-}
+    echo "Replacing original executable with thinned version"
+    rm "$FRAMEWORK_EXECUTABLE_PATH"
+    mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
 
-export -f copy_framework
+done
 
 ```
 
