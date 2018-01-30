@@ -33,11 +33,10 @@ Or if you prefer the old-school way:
 ## Manually Adding the SDK to an existing XCode project
 
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1677802/Spot_IM.framework.zip) (for  development and compiling on any device + simulator).
-2. _For app submission_ you should use the release version [Release Version](https://github.com/SpotIM/iOS-prod/files/1639377/Spot_IM.framework.zip). (you MUST use this version to submit your app to the Appstore)
-3. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
-4. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
-5. Click on the `add Other..`.
-6. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
+2. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
+3. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
+4. Click on the `add Other..`.
+5. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
 
 ![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
 
@@ -181,6 +180,40 @@ override func viewDidLoad() {
             
         }
     }
+```
+
+## Appstore Submission
+- If you Installed the SDK via Cocoapods, then you are free to skip this section.
+
+- If you Installed the SDK Manually, you will have to add this Script to remove the Simulator Slice of the SDK (You probably already have this Script if you are using other Universal frameworks):
+
+```bash
+
+#!/bin/bash
+
+copy_framework ()
+{
+    local framework=$1
+    local frameworks_folder="${CONFIGURATION_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}"
+
+    mkdir -p "$frameworks_folder"
+    rsync -av "$framework" "$frameworks_folder"
+
+    local file_path="$frameworks_folder/`basename $framework`/`basename $framework .framework`"
+
+    if [[ ! "$VALID_ARCHS" =~ "$i386" ]];
+    then
+        lipo -remove i386 "$file_path" -output "$file_path"
+    fi
+
+    if [[ ! "$VALID_ARCHS" =~ "$x86_64" ]];
+    then
+        lipo -remove x86_64 "$file_path" -output "$file_path"
+    fi
+}
+
+export -f copy_framework
+
 ```
 
 ## License
