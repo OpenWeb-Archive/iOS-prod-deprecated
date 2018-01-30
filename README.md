@@ -34,9 +34,10 @@ Or if you prefer the old-school way:
 
 1. Download the [Spot_IM.framework Universal](https://github.com/SpotIM/iOS-prod/files/1677802/Spot_IM.framework.zip) (for  development and compiling on any device + simulator).
 2. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
-3. Choose the project and the target, and in the `Embedded Binaries` click on the `+` sign.
-4. Click on the `add Other..`.
-5. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
+3. Choose the project and the target, and drag the `Spot_IM.framework` to the `Embedded Binaries` Section. 
+OR you can also:
+3b. In the `Embedded Binaries` click on the `+` sign. Then click on the `add Other..`.
+4b. Choose the `Spot_IM.framework` file and select `Copy items if needed`.
 
 ![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
 
