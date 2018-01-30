@@ -1,6 +1,7 @@
 ![Spotim: Spot.IM iOS SDK](https://github.com/SpotIM/iOS-prod/blob/master/SpotQAApp/Resources/iOS_SDK_BIG.jpg)
 
-## Welcome to the Spot.IM SDK 
+## Welcome to the Spot.IM SDK  [![CocoaPods Compatible](https://cocoapods.org/pods/SpotIM)](https://img.shields.io/cocoapods/v/SpotIM.svg)
+[![Platform](https://img.shields.io/cocoapods/p/SpotIM.svg)](https://github.com/SpotIM/iOS-prod)
 
 Spot.IM SDK provides an easy integration with [Spot.IM](http://www.spot.im) into a native iOS app. 
 
