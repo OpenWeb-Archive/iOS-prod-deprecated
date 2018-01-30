@@ -188,6 +188,7 @@ override func viewDidLoad() {
 - If you Installed the SDK Manually, you will have to add this Script to remove the Simulator Slice of the SDK (You probably already have this Script if you are using other Universal frameworks)
 
 Add this to the build phase:
+
 (Credit for the script to Daniel Kennett: http://ikennd.ac/blog/2015/02/stripping-unwanted-architectures-from-dynamic-libraries-in-xcode/)
 
 ```bash
