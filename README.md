@@ -36,16 +36,14 @@ Or if you prefer the old-school way:
 2. Unzip, Drag the Framework into your Project's directory, and then into the xCode Project.
 3. Choose the project and the target, and drag the `Spot_IM.framework` to the `Embedded Binaries` Section. 
 
-![alt text](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
+![Adding Spot.IM to the Embedded Binaries Section](https://cloud.githubusercontent.com/assets/2345998/22945428/ddfad650-f2fc-11e6-8f28-e6c10af65ea3.png)
 
 
 ## Using the SDK
 If you are using swift you will need to add
-[Bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
+![Bridging header](https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html).
 
-Here is a simple explanation on how to add a Bridging header:
-
-[Manually add a Bridging header] (https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html).
+Here is a simple explanation on how to ![Add a Bridging header](https://mycodetips.com/ios/manually-adding-swift-bridging-header-1290.html)
 
 the .h file should now include the following lines:
 
