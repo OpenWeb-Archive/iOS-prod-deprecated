@@ -23,7 +23,7 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'SpotIM'
 ```
-and then Running:
+and then in your terminal run:
 
 ```ruby
 pod install
