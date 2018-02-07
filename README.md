@@ -149,35 +149,6 @@ func logout() -> Void {
 }
 ```
 
-### Spot.IM "Popular In the Community" Carousel
-In desired view controller, add:
-
-```swift
-var spotController: SpotIMController!
-
-
-override func viewDidLoad() {
-        super.viewDidLoad()
-        spotController = SpotIMController.init()
-        spotController.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width, height: 452)
-        spotController.spotId = "sp_xxxxxxxx" // your Spot ID
-        spotController.configuration.title = "Title"
-        let cell: UITableViewCell = self.tableView.cellForRow(at: IndexPath.init(row: 1, section: 0))!
-        cell.contentView.addSubview(spotController.view)
-    }
-    
-    
-    
-    // Handle Rotation
-    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (context) in
-            self.spotController.view.frame = CGRect.init(origin: CGPoint.init(), size: CGSize.init(width: size.width, height: 452.0))
-        }) { (context) in
-            
-        }
-    }
-```
-
 ## Appstore Submission
 - If you Installed the SDK via Cocoapods, then you are free to skip this section.
 
