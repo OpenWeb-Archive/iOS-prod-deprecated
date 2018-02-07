@@ -36,12 +36,5 @@
 			<string>Cell</string>
 		</array>
 	</array>
-	<key>Recirculation</key>
-	<array>
-		<array>
-			<string>SpotId</string>
-			<string>Cell</string>
-		</array>
-	</array>
 </dict>
 </plist>
