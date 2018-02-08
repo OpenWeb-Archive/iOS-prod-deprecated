@@ -18,16 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     if (!_demoPageLink.length) {
-        _demoPageLink = @"http://ec2-54-245-13-126.us-west-2.compute.amazonaws.com/SpotIMTest.html";
+        NSString* host = @"https://www.spot.im";
+        if (_isStaging) {
+            host = @"https://stagingv2.spot.im";
+        }
+        _demoPageLink = [host stringByAppendingFormat:@"/modules/mobile-sdk/conversation/index.html?spot_id=%@&device=ios&message_count=4&post_id=%@", _spotId, _postId];
     }
     NSURL *url = [NSURL URLWithString:_demoPageLink];
     _handler = [SpotConversationIFrameHandler new];
     _handler.spotIFrameWebview = _webview;
     _handler.delegate = self;
+    NSLog(@"iFrame - Loading the Following URL: %@", _demoPageLink);
     [_webview loadRequest:[NSURLRequest requestWithURL:url]];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,17 +38,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)shouldLoadSpotConversation:(SpotConversationViewController *)controller {
+    //TODO: Replace View Instead of Displaying Modally:
     [self presentViewController:controller animated:YES completion:nil];
 }
 

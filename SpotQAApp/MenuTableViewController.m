@@ -47,11 +47,9 @@
     _shouldLoadDefaultValues = YES;
     _spotID = @"sp_IjnMf2Jd"; //AOL
     _postID = @"23307176"; // Post @ Production
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Menu" ofType:@"plist"];
     _menu = [NSDictionary dictionaryWithContentsOfFile:path];
     _currentIndex = -1;
@@ -93,14 +91,17 @@
 
 - (IBAction)presentSpotIM:(id)sender {
     NSString *pick = _menu.allKeys[_currentIndex];
-    NSString *spotId = [self.tableView.visibleCells.firstObject text];
+    _spotID = [self.tableView.visibleCells.firstObject text];
+    if ([self.tableView.visibleCells count] > 1) {
+        _postID = [self.tableView.visibleCells[1] text];
+    }
     [SpotConversation shared].isStaging = !_stateControl.selectedSegmentIndex;
-    if ([pick isEqualToString:@"Conversation"]) {
-        [self prepareConversation:spotId];
+    if ([pick isEqualToString:@"Recirculation"]) {
+        [self performSegueWithIdentifier:@"Recirculation" sender:_spotID];
     } else if ([pick isEqualToString:@"Conversation iFrame"]) {
-        [self prepareConversation:spotId];
+        [self performSegueWithIdentifier:@"iFrame" sender:nil];
     } else {
-        [self performSegueWithIdentifier:@"Recirculation" sender:spotId];
+        [self prepareConversation:_spotID];
     }
 }
 
@@ -239,6 +240,9 @@
         [SpotIM shared].staging = !_stateControl.selectedSegmentIndex;
     } else if ([segue.destinationViewController isKindOfClass:[WebviewReadViewController class]]) {
         ((WebviewReadViewController *)segue.destinationViewController).demoPageLink = [self.tableView.visibleCells.lastObject text];
+        ((WebviewReadViewController *)segue.destinationViewController).spotId = _spotID;
+        ((WebviewReadViewController *)segue.destinationViewController).postId = _postID;
+        ((WebviewReadViewController *)segue.destinationViewController).isStaging = !_stateControl.selectedSegmentIndex;
     }
 }
 

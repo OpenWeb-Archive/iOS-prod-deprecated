@@ -11,4 +11,7 @@
 @interface WebviewReadViewController : UIViewController
 @property (nonatomic, copy) NSString *demoPageLink;
 @property (nonatomic) BOOL ssoEnabled;
+@property (nonatomic, copy) NSString *spotId;
+@property (nonatomic, copy) NSString *postId;
+@property (nonatomic) BOOL isStaging;
 @end

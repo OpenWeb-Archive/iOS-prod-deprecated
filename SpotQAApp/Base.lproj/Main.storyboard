@@ -95,7 +95,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6fZ-fR-yU7">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="nGq-Ae-Rcy">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="nGq-Ae-Rcy">
                             <rect key="frame" x="106" y="6.5" width="163" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <segments>
@@ -178,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1591" y="-615"/>
+            <point key="canvasLocation" x="844" y="-667"/>
         </scene>
         <!--Webview Read View Controller-->
         <scene sceneID="Ib3-rR-FuS">
@@ -214,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8sY-96-EGM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844" y="888"/>
+            <point key="canvasLocation" x="1798" y="1002"/>
         </scene>
         <!--Intro Table View Controller-->
         <scene sceneID="rjN-Cr-f3n">
@@ -272,7 +272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wWc-6H-KQw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2521" y="-218"/>
+            <point key="canvasLocation" x="1799" y="-667"/>
         </scene>
         <!--Module View Controller-->
         <scene sceneID="2dY-Xt-7UE">
@@ -290,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qBb-ft-HFn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="887"/>
+            <point key="canvasLocation" x="1798" y="123"/>
         </scene>
         <!--Recirculation Table View Controller-->
         <scene sceneID="gQf-uR-HPX">
@@ -342,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1pm-jq-phs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1870" y="123"/>
+            <point key="canvasLocation" x="844" y="1002"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7GG-d2-QTH">
@@ -360,7 +360,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a13-JT-XTJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-49" y="123"/>
         </scene>
     </scenes>
 </document>
