@@ -96,7 +96,8 @@ If you want to present Spot IM conversation when user will click on Spot IM's if
         self.handler.delegate = self
     }
 
-    // ConversationIFrameDelegate
+    // (In case you want to present a pre-rendered conversation and open the live conversation in a new ViewController)
+    // ConversationIFrameDelegate 
     func shouldLoadSpotConversation(_ controller: SpotConversationViewController!) {
         self.present(controller, animated: true, completion: nil)
     }
